@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+
+    <script th:src="@{script.js}"></script>
+    <link th:href="@{styles.css}">
+</head>
+<body>
+<h1 th:fragment = "styledHeader" class="fancyTitle" th:text="${title}"></h1>
+
+<nav th:fragment = "navigation">
+    <ul>
+        <li><a href = "/events">All Events</a></li>
+        <li><a href = "/events/create">Create an Event</a></li>
+        <li><a href = "https://www.webelements.com">Other Building Blocks</a></li>
+    </ul>
+</nav>
+
+</body>
+</html>
