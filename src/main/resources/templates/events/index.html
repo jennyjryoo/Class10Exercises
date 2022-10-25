@@ -17,6 +17,7 @@
         <th>Address</th>
         <th>Registration</th>
         <th>Attendants</th>
+        <th>Type</th>
         <th>Edit</th>
     </tr>
     </thead>
@@ -28,6 +29,7 @@
         <td th:text="${event.address}"></td>
         <td th:text="${event.registration}"></td>
         <td th:text="${event.attendants}"></td>
+        <td th:text="${event.type.displayName}"></td>
         <td><a th:href="@{/events/edit/{id}(id=${event.id})}">Edit</a></td>
     </tr>
 </table>

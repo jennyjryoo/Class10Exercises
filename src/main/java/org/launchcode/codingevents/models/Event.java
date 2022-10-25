@@ -24,22 +24,25 @@ public class Event {
     @Email(message = "Please enter a valid email.")
     private String contactEmail;
 
+    private EventType type;
     @NotNull
     private Boolean registration;
 
     @Min(value = 1, message = "There must be at least 1 attendant.")
     private int attendants;
 
-    public Event(String name, String description, String contactEmail, String address) {
+    public Event(String name, String description, String contactEmail, String address, EventType type) {
+        this();
         this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
         this.address = address;
+    }
+
+    public Event() {
         this.id = nextId;
         nextId++;
     }
-
-    public Event() {}
 
     public String getName() {
         return name;
@@ -87,6 +90,14 @@ public class Event {
 
     public void setAttendants(int attendants) {
         this.attendants = attendants;
+    }
+
+    public EventType getType() {
+        return type;
+    }
+
+    public void setType(EventType type) {
+        this.type = type;
     }
 
     public int getId() {
