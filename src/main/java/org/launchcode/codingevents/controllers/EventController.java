@@ -34,7 +34,6 @@ public class EventController {
     public String createEvent(@ModelAttribute @Valid  Event newEvent, Errors errors, Model model) {
         if(errors.hasErrors()) {
             model.addAttribute("title","Create Event");
-            model.addAttribute("errorMsg","Bad data!");
             return "events/create";
         }
         EventData.add(newEvent);
